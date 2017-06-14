@@ -26,6 +26,8 @@ class ViewController: UIViewController {
     
     
     @IBAction func loginButton(_ sender: Any) {
+        messageLabel.text = ""
+        
        // get value form TextField
         strUser = userTextField.text
         strPass = passTextField.text
@@ -43,12 +45,26 @@ class ViewController: UIViewController {
         print("strPass ==> \(intPass!)")
         
         // call checkSpace
-        if checkSpace(myString: strUser!) {
-            print("User OK.")
+        if checkSpace(myString: strUser!) && checkSpace(myString: strPass!) {
+            print("User or Pass OK.")
+            //messageLabel.text = ""
+            
         } else{
-            print("Blank User!!!")
-        
+            print("Blank User or Pass!!!")
+            
+            showMessage(strMessage: "Please fill user of pass!!!")
         }
+        
+        /*
+        if checkSpace(myString: strPass) {
+            print("Pass OK.")
+        } else {
+            print("Blank Pass!!!")
+            
+            showMessage(strMessage: "Please fill pass!!!")
+
+        }
+        */
         
     }   // end loginButton
 
@@ -70,6 +86,12 @@ class ViewController: UIViewController {
         
         return result
     }
+    
+    func showMessage(strMessage: String) -> Void {
+        messageLabel.text = strMessage
+        
+    }
+    
     
     
     override func didReceiveMemoryWarning() {
