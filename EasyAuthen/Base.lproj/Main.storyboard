@@ -52,6 +52,9 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7LS-F7-wDl"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agr-SR-iLc">
                                 <rect key="frame" x="103" y="361" width="169" height="37"/>
@@ -85,6 +88,11 @@
                             <constraint firstItem="OtN-Km-WGC" firstAttribute="top" secondItem="b2N-mT-PSx" secondAttribute="bottom" constant="45" id="x0V-5u-fad"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="messageLabel" destination="agr-SR-iLc" id="Tl8-gN-xjk"/>
+                        <outlet property="passTextField" destination="OtN-Km-WGC" id="cs5-zE-e6b"/>
+                        <outlet property="userTextField" destination="b2N-mT-PSx" id="S3f-Fk-nRu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
