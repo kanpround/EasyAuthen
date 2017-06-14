@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     var strUser: String?
     var strPass: String?
     
+    let dicUser = ["master":"1234","kaika":"5678","kukkae":"9999"]
+    
     
     
     
@@ -47,7 +49,8 @@ class ViewController: UIViewController {
         // call checkSpace
         if checkSpace(myString: strUser!) && checkSpace(myString: strPass!) {
             print("User or Pass OK.")
-            //messageLabel.text = ""
+            showMessage(strMessage: "   ")
+            checkUserAndPass(strUser: strUser!, strPass: strPass!)
             
         } else{
             print("Blank User or Pass!!!")
@@ -55,17 +58,7 @@ class ViewController: UIViewController {
             showMessage(strMessage: "Please fill user of pass!!!")
         }
         
-        /*
-        if checkSpace(myString: strPass) {
-            print("Pass OK.")
-        } else {
-            print("Blank Pass!!!")
-            
-            showMessage(strMessage: "Please fill pass!!!")
-
-        }
-        */
-        
+               
     }   // end loginButton
 
     override func viewDidLoad() {
@@ -75,6 +68,8 @@ class ViewController: UIViewController {
         
     }   // end main method
 
+    
+    
     func checkSpace(myString: String) -> Bool {
         let intString = myString.characters.count
         var result: Bool = true
@@ -92,7 +87,15 @@ class ViewController: UIViewController {
         
     }
     
-    
+    func checkUserAndPass(strUser: String, strPass: String) -> Void {
+        // check user
+        if let testUser = dicUser[strUser] {
+            print("testUser ==> \(testUser)")
+        } else{
+            print("testUser ==> Nill")
+            showMessage(strMessage: "No " + strUser + "in my database!!!")
+        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
